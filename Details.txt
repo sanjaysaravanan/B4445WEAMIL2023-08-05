@@ -1,0 +1,134 @@
+
+Topics:
+
+  Redux with Storage:
+    middleware
+
+  HTML & Javascript:
+  1. defer in script tag
+    defer instrcts the html to execute js file only after parsing, but before DOMContentLoaded
+
+  2. Errors and errors handling
+    throw new Error('Error Msg');
+
+  3. CSS Transitions:
+
+    transition of one or more CSS prop values
+
+  Database:
+
+    what is DB?
+      A database is an organized collection of structured/unstructed information, or data, typically stored electronically in a computer system. A database is usually controlled by a database management system (DBMS).
+
+      Structured:
+        SQL --> Structured Query Language
+
+        DBs > Tables > Rows, Columns > Datatypes( INT, VARCHAR, FLOAT, BLOB, TEXT) 
+
+      Entities:
+      
+        whatsapp like application:
+          status ( something in status, createdTime, seenPeople, replys )
+          chatbox( isGroup true/false, members [],    ) > messages/chats ( text, isMedia true/false, time, seen true/false, isSent true/false)
+          users ( phone, name, email, profile)
+        
+        Instagram:
+          posts ( text, isMedia, postedTime, likes, dislikes )
+          users ( phone, name, email, profile, isPrivate, following [] )
+          comments ( text, time )
+        
+        Movies Booking:
+          movies/shows ( name, language, duration, trailer, category )
+          users ( phone, name, email )
+          orders ( movie, bookingId, time, theather, tickets, seat nos )
+          theather ( location, name, email, no of screens ) 
+          reviews ( movieId, userId, reviewContent, rating )
+        
+        Train Booking:
+          train ( name, number, coaches [], frequency ( daily, weekly, monthly ) )
+          booking ( src, destination, date, time, pnr )
+          users ( phone, email,)
+
+      Entity Relationship:
+        One <-> One
+          Order <-> Movie
+          Booking <-> train
+
+        One <-> Many
+          user <-> comments
+          user <-> posts
+
+        Many <-> Many ( most probably will be converted to a one <-> many )
+          classes <-> students
+          subjects <-> students
+
+        Movies
+          id ( primary )
+          name 
+          id   name
+          123  Leo
+        Artist:
+          Id    Name
+          1      Vijay
+          2      Sanjay Dutt
+        
+        Casting:
+          CastingId ( Primary )
+          movieId ( Foregin Key )
+          artistId ( Foregin Key )
+        
+          MovieId artistId CastingId
+            123    1        1
+            123    2        2
+        
+        Reviews:
+          MovieId UserId ReviewContent Rating
+          Leo      1      Good           3.5
+
+
+    basics:
+      datatypes in sql
+        basic types 
+          varchar(size) - string, 
+          INT(size), 
+          FLOAT(size, d), 
+          DATE
+          BLOB(size) / TEXT (CDN URL)- images/vidoes
+            usually not suggested to used because of the uncertain size and type of the media which can load the DB size.
+            Preferred way is CDN ( Content Delivery Network ) which can serve the images or videos hover internet
+      
+        several more refer - https://www.w3schools.com/sql/sql_datatypes.asp   
+
+    DBMS:
+
+      database management system (DBMS) is system software for creating and managing databases. A DBMS makes it possible for end users to create, protect, read, update and delete data in a database.
+
+      translates the sql into CRUD operation instructions
+
+    MySQL: ( DBMS Application  )
+
+      Mysql
+
+    MySql Engine:
+      Whichs lets use store any sort datatypes from  DBMS to the actual memory    
+
+
+    Homework:
+      operators - https://www.w3schools.com/sql/sql_operators.asp
+    
+      SQLBolt: Online website to Learn and Exercise on SQL
+
+Task:
+Day 31: 2023-08-05
+  Design a DB for IMDB
+
+1. Movie should have multiple media(Video or Image)
+2. Movie can belongs to multiple Genre
+3. Movie can have multiple reviews and Review can belongs to a user
+4. Artist can have multiple skills
+5. Artist can perform multiple role in a single film
+
+Next Session:
+
+    CRUD on a single Table --> CREATE, READ, UPDATE, DELETE 
+
